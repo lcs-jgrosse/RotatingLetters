@@ -8,6 +8,8 @@
 
 import Foundation
 
+// HINT: print( givenInput.uppercased() )
+
 // INPUT
 // Loop forever until we get good input
 var validInput = "" // outside the loop -- we can use it later on AFTER the loop
