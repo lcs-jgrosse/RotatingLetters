@@ -15,7 +15,6 @@ import Foundation
 var validInput = "" // outside the loop -- we can use it later on AFTER the loop
 prompt: while 1 == 1 {
     
-    var capsInput = ""
     // Prompt the user
     print("Input word is? ")
     
@@ -30,18 +29,16 @@ prompt: while 1 == 1 {
     }
     
     // Test #2: Is the input the correct length
-    if givenInput.count <= 1 || givenInput.count >= 30 {
+    if givenInput.count < 1 || givenInput.count > 30 {
         
         // If we got here, input is too short or it's too long
         continue // prompt again
         
     }
     
-    // Make sure that the input is UPPERCASE
-    capsInput = givenInput.uppercased()
     
     // Test #3: Check to ensure there is only UPPERCASE letters and no spaces
-    checking: for individualCharacter in capsInput {
+    checking: for individualCharacter in givenInput {
         
         // DEBUG: Print the character we are looking at
         print(individualCharacter)
@@ -60,7 +57,7 @@ prompt: while 1 == 1 {
     }
     
     // If we got to this point, we know the input is good
-    validInput = capsInput
+    validInput = givenInput
     break   // quit the while loop and begin PROCESS section
     
 }
@@ -68,9 +65,5 @@ prompt: while 1 == 1 {
 // PROCESS
 // Now we have valid input that can be processed according to
 // the remaining requirements of the scenario
-print(validInput)
-if Bool(validInput) == true {
-    print("Yes.")
-} else {
-    print("No.")
-}
+
+
