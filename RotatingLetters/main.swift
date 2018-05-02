@@ -15,6 +15,7 @@ import Foundation
 var validInput = "" // outside the loop -- we can use it later on AFTER the loop
 prompt: while 1 == 1 {
     
+    var capsInput = ""
     // Prompt the user
     print("Input word is? ")
     
@@ -36,8 +37,11 @@ prompt: while 1 == 1 {
         
     }
     
+    // Make sure that the input is UPPERCASE
+    capsInput = givenInput.uppercased()
+    
     // Test #3: Check to ensure there is only UPPERCASE letters and no spaces
-    checking: for individualCharacter in givenInput {
+    checking: for individualCharacter in capsInput {
         
         // DEBUG: Print the character we are looking at
         print(individualCharacter)
@@ -56,7 +60,7 @@ prompt: while 1 == 1 {
     }
     
     // If we got to this point, we know the input is good
-    validInput = givenInput
+    validInput = capsInput
     break   // quit the while loop and begin PROCESS section
     
 }
